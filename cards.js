@@ -1,12 +1,37 @@
+//////////////////// UNIX TIME FOR USE IN NEW CARD IDS ////////////////////
+
 console.log("Unix time", Date.now());
 
+//////////////////// OBJECT REFERENCES ///////////////////////////////////
+
+
+var createNewCardButton = document.getElementById("Create");
+// A card with a button with this ID will be created each time
+var deleteCardButton = document.getElementById("Destroy"); 
+
+//////////////////// EVENT LISTENERS /////////////////////////////////////
+
+
+createNewCardButton.addEventListener("click", function(e) {
+	console.log("button click works");	
+});
+
+//////////////////// FUNCTIONS FOR CARD CREATION AND DELETION ////////////
+
+function createNewCard() {
+
+};
+
+function deleteCard() {
+
+};
 
 // Planning:
 
-// HTML Code a card. Include a button called "Delete Me." Style its size and border.
+// HTML Code a card. Include a button called "deleteCardButton" Style its size and border.
 // HTML -> Use the above card within createNewCard
 
-// JS Ref and EL for Create button ID createNewCardButtonArea
+// JS Ref and EL for Create button ID createNewCardButton
 // JS Ref and EL for user input text called userInputTextArea
 // JS Ref and EL for delete buttons. Each delete button will have a Unix timestamp to id itself for deletion. 
 // JS When clicked run function called createNewCard
