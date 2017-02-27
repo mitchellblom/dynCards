@@ -7,3 +7,11 @@ textarea {
 	width: 15%;
 	text-overflow: wrap;
 }
+
+.dynamicCard {
+	display: inline-block;
+	border: 2px solid black;
+	margin: 30px;
+	padding: 20px;
+	overflow-wrap: wrap;
+}

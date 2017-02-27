@@ -1,25 +1,39 @@
 //////////////////// UNIX TIME FOR USE IN NEW CARD IDS ////////////////////
 
-console.log("Unix time", Date.now());
+
 
 //////////////////// OBJECT REFERENCES ///////////////////////////////////
 
-
+var userInputText = document.getElementById("userInputTextArea")
 var createNewCardButton = document.getElementById("Create");
 // A card with a button with this ID will be created each time
-var deleteCardButton = document.getElementById("Destroy"); 
+var newCardSpace = document.getElementById("newCardWritesToHere");
+var deleteCardButton = document.getElementById("Destroy");
+var idForCreatedCard;
 
 //////////////////// EVENT LISTENERS /////////////////////////////////////
 
 
-createNewCardButton.addEventListener("click", function(e) {
-	console.log("button click works");	
+createNewCardButton.addEventListener("click", function() {
+	createCardId();
 });
 
 //////////////////// FUNCTIONS FOR CARD CREATION AND DELETION ////////////
 
-function createNewCard() {
+function createCardId() { 
+	idForCreatedCard = Date.now();
+	console.log("idForCreatedCard:", idForCreatedCard);
+	createNewCard(idForCreatedCard);
+};
 
+function createNewCard(idForCreatedCard) {
+	var newCard = 
+		`<div class='dynamicCard' id='${idForCreatedCard}'> 
+			<p>${userInputText}</p>
+			<button id='Destroy'>Delete This Card</button> 
+		</div>`
+		console.log("newCard", newCard);
+	newCardSpace.innerHTML = newCard;
 };
 
 function deleteCard() {
