@@ -8,7 +8,7 @@ var userInputText = document.getElementById("userInputTextArea")
 var createNewCardButton = document.getElementById("Create");
 // A card with a button with this ID will be created each time
 var newCardSpace = document.getElementById("newCardWritesToHere");
-var deleteCardButton = document.getElementById("Destroy");
+var deleteCardButton = document.getElementsByName("Destroy");				// is it by name or by class?
 var idForCreatedCard;
 
 //////////////////// EVENT LISTENERS /////////////////////////////////////
@@ -16,6 +16,10 @@ var idForCreatedCard;
 
 createNewCardButton.addEventListener("click", function() {
 	createCardId();
+});
+
+deleteCardButton.addEventListener("click", function() {
+	deleteCard();
 });
 
 //////////////////// FUNCTIONS FOR CARD CREATION AND DELETION ////////////
@@ -29,7 +33,7 @@ function createCardId() {
 function createNewCard(idForCreatedCard) {
 	var newCard = 
 		`<div class='dynamicCard' id='${idForCreatedCard}'> 
-			<p>${userInputText}</p>
+			<p>${userInputText.value}</p>
 			<button id='Destroy'>Delete This Card</button> 
 		</div>`
 		console.log("newCard", newCard);
@@ -37,7 +41,7 @@ function createNewCard(idForCreatedCard) {
 };
 
 function deleteCard() {
-
+	//will identify the card to delete by its self identifier.
 };
 
 // Planning:
