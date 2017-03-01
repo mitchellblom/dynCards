@@ -8,18 +8,28 @@ var userInputText = document.getElementById("userInputTextArea")
 var createNewCardButton = document.getElementById("Create");
 // A card with a button with this ID will be created each time
 var newCardSpace = document.getElementById("newCardWritesToHere");
-var deleteCardButton = document.getElementsByName("Destroy");				// is it by name or by class?
+var deleteCardButton = document.getElementById("Destroy");
 var idForCreatedCard;
+var deleteCard;
 
 //////////////////// EVENT LISTENERS /////////////////////////////////////
-
 
 createNewCardButton.addEventListener("click", function() {
 	createCardId();
 });
 
-deleteCardButton.addEventListener("click", function() {
-	deleteCard();
+createNewCardButton.addEventListener("keypress", createCardId);
+document.onkeydown = function() {
+ if (window.event.keyCode === 13) {
+   createCardId();
+ } 
+};
+
+document.addEventListener("click", function(e) {
+	console.log("click anywhere works", e);
+	if (e.target.name === "docFindMe") {
+		deleteCard(e.target.id);
+	}
 });
 
 //////////////////// FUNCTIONS FOR CARD CREATION AND DELETION ////////////
@@ -34,14 +44,21 @@ function createNewCard(idForCreatedCard) {
 	var newCard = 
 		`<div class='dynamicCard' id='${idForCreatedCard}'> 
 			<p>${userInputText.value}</p>
-			<button id='Destroy'>Delete This Card</button> 
+			<button name='docFindMe' id='Destroy${idForCreatedCard}'>Delete This Card</button>
 		</div>`
-		console.log("newCard", newCard);
-	newCardSpace.innerHTML = newCard;
+		// add more info to destroy button ID, concatenate it with something else 
+	newCardSpace.innerHTML += newCard;
 };
 
-function deleteCard() {
-	//will identify the card to delete by its self identifier.
+function deleteCard(idForCardToDelete) { // pass id from Delete and splice the tag off.
+	console.log("delete card id passing thru to deleteCard funciton", idForCardToDelete);
+	var origId = idForCardToDelete.slice(7);
+	console.log("write just numbers of passed ID", origId);
+	// target child element with id 
+	var destroyThisButton = document.getElementById(origId);
+	console.log("destroyThisButton", destroyThisButton);
+	destroyThisButton.parentNode.removeChild(destroyThisButton);
+	// target parent element and delete the child with the id created for that card. 
 };
 
 // Planning:
