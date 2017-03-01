@@ -1,9 +1,9 @@
 # NSS Dynamic Cards Exercise
 
-![Splashpage](**screenshot will go here**)
+![Splashpage](https://raw.githubusercontent.com/mitchellblom/dynCards/cards/dynCards.png)
 
 ## Project Summary:
-An exercise in constructive and destructive *DOM manipulation* using exclusively *vanilla Javascript*.
+An exercise in constructive and destructive **DOM manipulation** using exclusively **vanilla Javascript**.
 
 <hr>
 
@@ -15,9 +15,9 @@ An exercise in constructive and destructive *DOM manipulation* using exclusively
 <hr>
 
 ## Demonstrated:
- - Methods like *.slice* and *.parentNode.removeChild*
- - *Backtick* notation: `writing JS in ${here}` for easier reading and concatenation
- - Use of *Unix Time* as unique identifier for created elements and those to delete
+ - Methods like **.slice** and **.parentNode.removeChild**
+ - **Backtick** notation: `writing JS in ${here}` for easier reading and concatenation
+ - Use of **Unix Time** as unique identifier for created elements and those to delete
  - Viable plan to complete the majority of the exercise before beginning to actually code
 
 
