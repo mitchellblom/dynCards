@@ -4,7 +4,7 @@ var userInputText = document.getElementById("userInputTextArea")
 var createNewCardButton = document.getElementById("Create");
 // A card with a button with this ID will be created each time
 var newCardSpace = document.getElementById("newCardWritesToHere");
-var deleteCardButton = document.getElementById("Destroy");
+// var deleteCardButton = document.getElementById("Destroy");
 var idForCreatedCard;
 var deleteCard;
 
@@ -31,7 +31,6 @@ document.addEventListener("click", function(e) {
 
 function createCardId() { 
 	idForCreatedCard = Date.now();
-	// console.log("idForCreatedCard:", idForCreatedCard);
 	createNewCard(idForCreatedCard);
 };
 
@@ -47,10 +46,10 @@ function createNewCard(idForCreatedCard) {
 	userInputText.value = "";
 };
 
-function deleteCard(idForCardToDelete) { 
+function deleteCard(idForCardToDelete) {  // idForCardToDelete is the same as e.target.id from clicking deleteCard
 	// passing id from Delete and splicing the tag off.
 	var origId = idForCardToDelete.slice(7);
 	var destroyThisButton = document.getElementById(origId);
 	destroyThisButton.parentNode.removeChild(destroyThisButton);
-	// target parent element and delete the child with the id created for that card. 
+	// target parent element and delete the child with the id created for that card.
 };

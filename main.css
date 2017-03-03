@@ -1,8 +1,13 @@
 body {
+	font-family: Helvetica, Arial, sans-serif;
+	color: #98CBB4;
+	letter-spacing: .12em;
 	background-color: #517000;
 }
 
 textarea {
+	display: flex;
+	justify-content: row;	
 	height: 15%;
 	width: 15%;
 	text-overflow: wrap;
@@ -13,5 +18,7 @@ textarea {
 	border: 2px solid black;
 	margin: 30px;
 	padding: 20px;
+	width: 15%;
+	height: 200px;
 	overflow-wrap: wrap;
 }
